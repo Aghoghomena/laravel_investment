@@ -13,6 +13,6 @@ class CompanyController extends Controller
             'first company',
             'second company'
         ];
-        return view('create', ['company'=> $company, 'foo'=> 'foobar']);
+        return view('company.create', ['company'=> $company, 'foo'=> 'foobar']);
     }
 }

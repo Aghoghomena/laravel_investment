@@ -16,4 +16,4 @@
 Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 Route::get('/company', 'PagesController@company');
-Route::get('/create_company', 'CompanyController@create');
+Route::get('/company/create', 'CompanyController@create');
