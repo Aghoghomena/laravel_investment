@@ -1,4 +1,4 @@
-<aside class="side-navigation-wrapper enter-right" data-no-scrollbar data-animation="push-in">
+<aside class="side-navigation-wrapper enter-right" data-no-scrollbar data-animation="scale-in">
     <div class="side-navigation-scroll-pane">
         <div class="side-navigation-inner">
             <div class="side-navigation-header">
@@ -8,7 +8,7 @@
                     </a>
                 </div>
             </div>
-            <nav class="side-navigation">
+            <nav class="side-navigation center">
                 <ul>
                     <li class="current">
                         <a href="#" class="contains-sub-menu">How it Works</a>
@@ -46,7 +46,7 @@
                     </li>
                 </ul>
             </nav>
-            <nav class="side-navigation nav-block">
+            <nav class="side-navigation nav-block center">
                 <ul>
                     <li>
                         <a href="#" class="contains-sub-menu cart">Cart <span class="cart-indication"><span class="badge">3</span></span></a>
@@ -103,7 +103,7 @@
                 </ul>
             </nav>
             <div class="side-navigation-footer">
-                <p class="copyright no-margin-bottom">&copy; 2014 THEMEMOUNTAIN.</p>
+                <p class="copyright no-margin-bottom">&copy; 2019 Aghoghomena.</p>
             </div>
         </div>
     </div>

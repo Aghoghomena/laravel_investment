@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{asset ('css/skin.css') }}" />
 
 </head>
-<body class="shop home-page">
+<body class="shop">
 @include("includes.mobnav")
 
 <div class="wrapper reveal-side-navigation">
@@ -28,7 +28,7 @@
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="http://maps.googleapis.com/maps/api/js?v=3"></script>
+{{--<script src="http://maps.googleapis.com/maps/api/js?v=3"></script>--}}
 <script src="{{asset ('js/main.js') }}"></script>
 </body>
 </html>

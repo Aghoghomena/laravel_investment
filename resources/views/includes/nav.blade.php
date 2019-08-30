@@ -1,4 +1,5 @@
 <!-- Header -->
+
 <header class="header header-fixed header-fixed-on-mobile header-transparent" data-bkg-threshold="100" data-compact-threshold="100">
     <div class="header-inner">
         <div class="row nav-bar">
