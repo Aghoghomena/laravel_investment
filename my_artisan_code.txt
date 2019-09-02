@@ -1,0 +1,2 @@
+php artisan route:list
+php artisan make:controller name -r

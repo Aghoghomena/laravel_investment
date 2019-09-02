@@ -8,7 +8,7 @@ use \App\Inv_user;
 class UserController extends Controller
 {
     //
-    public function users(){
+    public function index(){
 
         $users = Inv_user::all();
 
@@ -23,7 +23,7 @@ class UserController extends Controller
     }
 
     //create user
-    public function save(){
+    public function store(){
 
 
         $users = new Inv_user();

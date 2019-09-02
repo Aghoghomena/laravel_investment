@@ -18,9 +18,14 @@ Route::get('/about', 'PagesController@about');
 Route::get('/company', 'PagesController@company');
 
 //user
-Route::get('/user/list', 'UserController@users');
-Route::get('/user/create', 'UserController@create');
-//create user
-Route::post('/save_user', 'UserController@save');
+Route::Resource('user', 'UserController');
+//Route::get('/user', 'UserController@index');
+//Route::get('/user/create', 'UserController@create');
+//Route::get('/user/{project}', 'UserController@show');
+//Route::post('/user', 'UserController@store');
+//Route::get('/user/{project}/edit', 'UserController@edit');
+//Route::patch('/user/{project}', 'UserController@update');
+//Route::delete('/user/{project}', 'UserController@destroy');
+
 //company
 Route::get('/company/create', 'CompanyController@create');

@@ -26,7 +26,7 @@
                 <div class="column width-12">
                     <div class="signup-form-container signup-box horizon" data-animate-in="preset:slideInLeftLong;duration:1000ms;">
                         <h3 class="mb-10">Create Users</h3>
-                        <form class="" method="post" action="/save_user">
+                        <form class="" method="post" action="/user">
                             {{csrf_field()}}
                             <div class="row">
                                 <div class="column width-6">
