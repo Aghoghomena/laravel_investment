@@ -19,7 +19,7 @@ class UserController extends Controller
     public function create(){
 
 
-        return view('settings.create_user');
+        return view('settings.create');
     }
 
     //create user
@@ -35,6 +35,16 @@ class UserController extends Controller
         $users->save();
         return redirect('/user/list');
         //return request()->all();
+    }
+
+    //edit
+
+    public function edit($id) //this will respond to edit function
+    {
+
+        $user = Inv_user::find($id);
+
+        return view('settings.edit', compact('user'));
     }
 
 }
