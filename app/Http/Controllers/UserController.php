@@ -26,7 +26,15 @@ class UserController extends Controller
     public function save(){
 
 
-        return request()->all();
+        $users = new Inv_user();
+        $users->first_name = request('fname');
+        $users->last_name = request('lname');
+        $users->email = request('email');
+        $users->password = request('password');
+        $users->last_login = '2019-08-30 10:18:00';
+        $users->save();
+        return redirect('/user/list');
+        //return request()->all();
     }
 
 }

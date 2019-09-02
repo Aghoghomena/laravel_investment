@@ -12,7 +12,7 @@
                 <div class="column width-12 center">
                     <div class="title-container">
                         <div class="title-container-inner color-white">
-                            <h1 class="title-xlarge font-alt-2 weight-light color-white mb-10">Loan Deals</h1>
+                            <h1 class="title-xlarge font-alt-2 weight-light color-white mb-10">Users List</h1>
                         </div>
                     </div>
                 </div>
