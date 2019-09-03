@@ -12,7 +12,7 @@
                 <div class="column width-12 center">
                     <div class="title-container">
                         <div class="title-container-inner color-white">
-                            <h1 class="title-xlarge font-alt-2 weight-light color-white mb-10">Users List</h1>
+                            <h1 class="title-xlarge font-alt-2 weight-light color-white mb-10">Single User</h1>
                         </div>
                     </div>
                 </div>
@@ -26,24 +26,15 @@
                             <thead>
                             <tr>
                                 <th class="product-remove"></th>
-                                <th class="product-remove"></th>
-                                <th class="product-remove"></th>
                                 <th class="product-name">First Name</th>
                                 <th class="product-price">Last Name</th>
                                 <th class="product-quantity">Email</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($users as $user)
                                 <tr class="cart-item">
                                     <td class="product-remove center">
                                         <a href="#" class="product-remove icon-cancel"></a>
-                                    </td>
-                                    <td class="product-remove center">
-                                        <a href="/user/{{ $user->id }}" class="product-remove icon-select-arrows"></a>
-                                    </td>
-                                    <td class="product-remove center">
-                                        <a href="/user/{{ $user->id }}/edit" class="product-remove icon-edit"></a>
                                     </td>
                                     <td class="product-name">
                                         {{$user->first_name}}
@@ -55,7 +46,6 @@
                                         {{$user->email}}
                                     </td>
                                 </tr>
-                            @endforeach
                             </tbody>
                         </table>
                     </div>

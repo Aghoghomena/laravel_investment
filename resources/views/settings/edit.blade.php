@@ -53,6 +53,9 @@
                                 <div class="column width-5">
                                     <button type="submit" class="form-submit button pill large border-theme bkg-hover-theme color-theme color-hover-white">Update</button>
                                 </div>
+                                <div class="column width-5">
+                                    <button type="submit" class="form-submit button pill large border-theme bkg-hover-theme color-theme color-hover-white">Delete</button>
+                                </div>
                             </div>
                             <input type="text" name="honeypot" class="form-honeypot form-element">
                             <div class="form-response show"></div>

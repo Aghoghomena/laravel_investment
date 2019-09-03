@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use \App\Inv_user;
+use Illuminate\Validation\Rules\In;
 
 class UserController extends Controller
 {
@@ -39,17 +41,14 @@ class UserController extends Controller
 
     //edit
 
-    public function edit($id) //this will respond to edit function
+    public function edit(Inv_user $user) //this will respond to edit function
     {
 
-        $user = Inv_user::find($id);
 
         return view('settings.edit', compact('user'));
     }
 
-    public function update($id){
-
-        $user = Inv_user::find($id);
+    public function update(Inv_user $user){
 
         $user->first_name = request('fname');
         $user->last_name = request('lname');
@@ -59,6 +58,19 @@ class UserController extends Controller
 
         $user->save();
         return redirect('/user');
+
+    }
+
+    public function  destroy(Inv_user $user){
+
+        $user->delete();
+    }
+
+
+    public function show(Inv_user $user){
+
+
+        return view('settings.single', compact('user'));
 
     }
 
