@@ -47,11 +47,11 @@
                                 </div>
                                 <div class="column width-6">
                                     <div class="field-wrapper">
-                                        <input type="password" name="password" class="form-name form-element large left" placeholder="Password*" tabindex="2">
+                                        <input type="password" name="password" class="form-name form-element large left" placeholder="Password*" tabindex="2" value="{{$user->password}}">
                                     </div>
                                 </div>
                                 <div class="column width-5">
-                                    <button type="submit" class="form-submit button pill large border-theme bkg-hover-theme color-theme color-hover-white">Create</button>
+                                    <button type="submit" class="form-submit button pill large border-theme bkg-hover-theme color-theme color-hover-white">Update</button>
                                 </div>
                             </div>
                             <input type="text" name="honeypot" class="form-honeypot form-element">

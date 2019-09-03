@@ -33,7 +33,7 @@ class UserController extends Controller
         $users->password = request('password');
         $users->last_login = '2019-08-30 10:18:00';
         $users->save();
-        return redirect('/user/list');
+        return redirect('/user');
         //return request()->all();
     }
 
@@ -45,6 +45,21 @@ class UserController extends Controller
         $user = Inv_user::find($id);
 
         return view('settings.edit', compact('user'));
+    }
+
+    public function update($id){
+
+        $user = Inv_user::find($id);
+
+        $user->first_name = request('fname');
+        $user->last_name = request('lname');
+        $user->email = request('email');
+        $user->password = request('password');
+        $user->last_login = '2019-08-30 10:18:00';
+
+        $user->save();
+        return redirect('/user');
+
     }
 
 }
