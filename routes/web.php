@@ -29,3 +29,7 @@ Route::Resource('user', 'UserController');
 
 //company
 Route::get('/company/create', 'CompanyController@create');
+
+//UserType
+
+Route::Resource('usertype', 'UserTypeController');

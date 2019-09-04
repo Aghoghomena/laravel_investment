@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use Illuminate\Http\Request;
-use \App\Inv_user;
-use Illuminate\Validation\Rules\In;
+use App\Inv_user;
 
 class UserController extends Controller
 {
@@ -27,14 +24,25 @@ class UserController extends Controller
     //create user
     public function store(){
 
+//        dd(request(['first_name', 'last_name', 'email', 'password']));
+        //Inv_user::create(request(['first_name', 'last_name', 'email', 'password']));
 
-        $users = new Inv_user();
-        $users->first_name = request('fname');
-        $users->last_name = request('lname');
-        $users->email = request('email');
-        $users->password = request('password');
-        $users->last_login = '2019-08-30 10:18:00';
-        $users->save();
+//        $validated = request()->validate([
+//
+//            'first_name' =>['required', 'min:3', 'max:200'],
+//            'last_name' => 'required',
+//            'email' =>'required',
+//            'password' => 'required'
+//        ]);
+        Inv_user::create([
+            'first_name' => request('fname'),
+            'last_name' => request('lname'),
+            'email' => request('email'),
+            'password' => request('password'),
+            'last_login' => '2019-08-30 10:18:00'
+
+        ]);
+
         return redirect('/user');
         //return request()->all();
     }
@@ -49,6 +57,8 @@ class UserController extends Controller
     }
 
     public function update(Inv_user $user){
+
+//        Inv_user::update(request(['first_name', 'last_name', 'email', 'password']));
 
         $user->first_name = request('fname');
         $user->last_name = request('lname');
