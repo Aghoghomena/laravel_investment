@@ -1,4 +1,3 @@
-
 @extends('master')
 @section('title', 'View Users')
 @section('content')
@@ -22,37 +21,32 @@
             <div class="row">
                 <div class="column width-12">
                     <div class="cart-review">
-                        <table class="table non-responsive">
+                        <table class="table" id="table">
                             <thead>
                             <tr>
-                                <th class="product-remove"></th>
-                                <th class="product-remove"></th>
-                                <th class="product-remove"></th>
-                                <th class="product-name">First Name</th>
-                                <th class="product-price">Last Name</th>
-                                <th class="product-quantity">Email</th>
+                                <th class="text-center">#</th>
+                                <th class="text-center">First Name</th>
+                                <th class="text-center">Last Name</th>
+                                <th class="text-center">Email</th>
+                                <th class="text-center">User Type</th>
+                                <th class="text-center">Last Login</th>
+                                <th class="text-center"></th>
+                                <th class="text-center"></th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($users as $user)
-                                <tr class="cart-item">
-                                    <td class="product-remove center">
-                                        <a href="#" class="product-remove icon-cancel"></a>
-                                    </td>
-                                    <td class="product-remove center">
-                                        <a href="/user/{{ $user->id }}" class="product-remove icon-select-arrows"></a>
-                                    </td>
-                                    <td class="product-remove center">
-                                        <a href="/user/{{ $user->id }}/edit" class="product-remove icon-edit"></a>
-                                    </td>
-                                    <td class="product-name">
-                                        {{$user->first_name}}
-                                    </td>
-                                    <td class="product-name">
-                                        {{$user->last_name}}
-                                    </td>
-                                    <td class="product-name">
-                                        {{$user->email}}
+                                <tr>
+                                    <td>{{$user->id}}</td>
+                                    <td>{{$user->first_name}}</td>
+                                    <td>{{$user->last_name}}</td>
+                                    <td>{{$user->email}}/td>
+                                    <td>{{$user->type->name}}</td>
+                                    <td>{{$user->last_login}}</td>
+                                    <td><a href="/user/{{ $user->id }}/edit"><span class="icon-pencil"></span></a></td>
+                                    <td><a href="#" data-status="{{$user->status ? 0 : 1}}" data-id="{{$user->id}}">
+                                            <span class="remove {{$user->status ?'icon-cancel': 'icon-check'}}"></span>
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -66,4 +60,45 @@
     </div>
     <!-- Content End -->
 
+@endsection
+@section('js')
+    <script>
+        $(document).ready(function () {
+            $('#table').DataTable();
+
+            //disable item
+            $('#table').on('click', '.remove', function () {
+
+                var type = $(this).attr('data-status');
+                var user_id = $(this).attr('data-id');
+                console.log(parseInt(user_id));
+                console.log(parseInt(type));
+
+                $.ajax({
+
+                    type: 'GET',
+                     // url: '/user/1/0',
+                    url: '/user/'+parseInt(user_id)+'/'+parseInt(type),
+
+                    data: {status: type},
+
+                    success: function (data) {
+
+                        if (data.status === 1) {
+
+                            alert(data.message);
+                            location.reload();
+                        } else {
+
+                            alert(data.message);
+
+                        }
+
+                    }
+
+                });
+
+            });
+        });
+    </script>
 @endsection

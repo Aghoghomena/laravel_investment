@@ -15,6 +15,7 @@
     <!-- Css -->
     <link rel="stylesheet" href="{{asset ('css/core.min.css') }}" />
     <link rel="stylesheet" href="{{asset ('css/skin.css') }}" />
+    <link rel="stylesheet" href="{{asset ('css/datatable.css') }}" />
 
 </head>
 <body class="shop">
@@ -30,6 +31,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 {{--<script src="http://maps.googleapis.com/maps/api/js?v=3"></script>--}}
 <script src="{{asset ('js/main.js') }}"></script>
+<script src="{{asset ('js/datatable.min.js') }}"></script>
+<script src="{{asset ('js/datatable.bootstrap.js') }}"></script>
+
+@yield('js')
 </body>
 </html>
 

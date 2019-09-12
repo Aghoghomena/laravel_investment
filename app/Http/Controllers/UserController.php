@@ -11,6 +11,8 @@ class UserController extends Controller
 
         $users = Inv_user::all();
 
+//        dd($users->all());
+
         return view('settings.users', ['users'=> $users]);
     }
 
@@ -74,8 +76,27 @@ class UserController extends Controller
     public function  destroy(Inv_user $user){
 
         $user->delete();
+
     }
 
+    public function disenable (Inv_user $user,$status){
+
+        $current_status = $user->status;
+        //check if the status sent
+        if($current_status === $status){
+            return response()->json([
+                'status' => 0,
+                'message' => 'Cannot Update to the same status'
+            ]);
+        }
+        else{
+            $user->update_status($status);
+            return response()->json([
+                'status' => 1,
+                'message' => 'Updated Successfully'
+            ]);
+        }
+    }
 
     public function show(Inv_user $user){
 

@@ -19,6 +19,7 @@ Route::get('/company', 'PagesController@company');
 
 //user
 Route::Resource('user', 'UserController');
+Route::get('/user/{user}/{status}', 'UserController@disenable');
 //Route::get('/user', 'UserController@index');
 //Route::get('/user/create', 'UserController@create');
 //Route::get('/user/{project}', 'UserController@show');

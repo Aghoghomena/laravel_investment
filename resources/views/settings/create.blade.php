@@ -54,13 +54,7 @@
                                 </div>
                             </div>
                             <input type="text" name="honeypot" class="form-honeypot form-element">
-                            <div class="form-response show">
-                                <ul>
-                                    @foreach($errors->all() as $error)
-                                        <li>{{$error}}</li>
-                                        @endforeach
-                                </ul>
-                            </div>
+                           @include('includes.error')
                         </form>
                     </div>
                 </div>
